@@ -1,0 +1,24 @@
+{
+  "name": "gitbook-setup-deploy-gh-pages",
+  "version": "1.0.1",
+  "description": "Deploy plugin for gitbook-setup to allow deployments to github pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gitbook-setup",
+    "gitbook",
+    "setup",
+    "deploy",
+    "gh-pages",
+    "github",
+    "pages"
+  ],
+  "author": "Rudolf Cicko",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^0.12.0",
+    "gulp-gh-pages": "^0.5.4"
+  }
+}
