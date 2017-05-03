@@ -18,6 +18,7 @@
   "author": "Rudolf Cicko",
   "license": "ISC",
   "dependencies": {
+    "fs-extra": "^3.0.0",
     "gh-pages": "^0.12.0",
     "gulp-gh-pages": "^0.5.4"
   }
