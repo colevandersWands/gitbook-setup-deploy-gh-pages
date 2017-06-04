@@ -1,6 +1,6 @@
 {
   "name": "gitbook-setup-deploy-gh-pages",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Deploy plugin for gitbook-setup to allow deployments to github pages",
   "main": "index.js",
   "scripts": {
