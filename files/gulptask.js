@@ -2,6 +2,7 @@
   (function () {
   var gghPages = require('gulp-gh-pages');
   var ghPages = require('gh-pages');
+  var gulp = require('gulp');
   var fs = require('fs-extra');
 
   gulp.task('deploy-gh-pages', [], function() {
