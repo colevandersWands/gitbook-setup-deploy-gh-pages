@@ -19,4 +19,4 @@
       return gulp.src('./_book/**/*').pipe(gghPages());
     }
   });
-})
+})(this);
