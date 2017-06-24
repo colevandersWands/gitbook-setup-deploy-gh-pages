@@ -3,7 +3,7 @@
   var gghPages = require('gulp-gh-pages');
   var ghPages = require('gh-pages');
   var gulp = require('gulp');
-  var inquirer = require('inquirer')
+  var inquirer = require('inquirer');
   var fs = require('fs-extra');
   var hub = require('hub');
 
