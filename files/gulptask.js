@@ -6,13 +6,17 @@
   var inquirer = require('inquirer');
   var fs = require('fs-extra');
   var hub = require('hub');
-
   var bookName = require('./package.json').name;
 
+  const GithubManager = require('./lib/GithubManager.js');
+
+  var ghManager = new GithubManager();
+
   gulp.task('deploy-gh-pages', [], function() {
-    if (fs.existsSync('.git')) {
-      exec()
+    if (!fs.existsSync('.git')) {
+      exec('git init');
     }
+
     if (!fs.existsSync('_book')) {
         exec('gitbook build', function (err, out) {
           if (!err) return gulp.src('./_book/**/*').pipe(gghPages());
