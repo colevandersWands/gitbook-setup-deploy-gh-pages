@@ -16,6 +16,7 @@
     }
 
     exec ('git remote -v | cut -f1 | grep gh-pages', function (err, out) {
+        console.log(out.length);
         if (out.length == 0) { // No existe remoto gh-pages
             exec('gitbook-setup set-remote-repo', function (err, out) {
               buildAndPush();
