@@ -9,34 +9,31 @@
   var exec = require('child_process').exec;
   var bookName = require('./package.json').name;
 
-
   gulp.task('deploy-gh-pages', [], function() {
     if (!fs.existsSync('.git')) {
       exec('git init');
     }
 
+    var set_remote = true;
+
     exec ('git remote -v | cut -f1 | grep gh-pages', function (err, out) {
         console.log(out.length);
         if (out.length == 0) { // No existe remoto gh-pages
-            exec('gitbook-setup set-remote-repo', function (err, out) {
-              buildAndPush();
-            });
-        }else {
-          buildAndPush();
+          set_remote = false;
+          console.log("You don't have remote repo. Please execute $gitbook-setup set-remote-repo");
         }
     });
+
+    if (set_remote) {
+      if (!fs.existsSync('_book')) {
+        console.log("You don't have your book built. Please execute $gitbook-setup build")
+      }
+      else {
+        console.log("Lets push to gh-pages");
+        return gulp.src('./_book/**/*').pipe(gghPages({
+          origin: 'gh-pages'
+        }));
+      }
+    }
   });
-
-  function buildAndPush () {
-    if (!fs.existsSync('_book')) {
-      exec('gitbook build', function (err, out) {
-        if (!err) return gulp.src('./_book/**/*').pipe(gghPages());
-      });
-    }
-    else {
-      return gulp.src('./_book/**/*').pipe(gghPages());
-    }
-  }
-
-
 })(this);
