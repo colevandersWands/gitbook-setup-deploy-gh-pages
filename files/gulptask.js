@@ -6,6 +6,7 @@
   var inquirer = require('inquirer');
   var fs = require('fs-extra');
   var hub = require('hub');
+  var exec = require('child_process').exec;
   var bookName = require('./package.json').name;
 
 
