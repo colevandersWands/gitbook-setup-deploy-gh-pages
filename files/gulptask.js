@@ -30,9 +30,7 @@
       }
       else {
         console.log("Lets push to gh-pages");
-        return gulp.src('./_book/**/*').pipe(gghPages({
-          origin: 'gh-pages'
-        }));
+        return gulp.src('./_book/**/*').pipe(gghPages());
       }
     }
   });
