@@ -16,7 +16,7 @@
 
     var set_remote = true;
 
-    exec ('git remote -v | cut -f1 | grep gh-pages', function (err, out) {
+    exec ('git remote -v | cut -f1 | grep origin', function (err, out) {
         console.log(out.length);
         if (out.length == 0) { // No existe remoto gh-pages
           set_remote = false;
