@@ -17,16 +17,15 @@
     var set_remote = true;
 
     exec ('git remote -v | cut -f1 | grep origin', function (err, out) {
-        console.log(out.length);
         if (out.length == 0) { // No existe remoto gh-pages
           set_remote = false;
-          console.log("You don't have remote repo. Please execute $gitbook-setup set-remote-repo");
-        }
+	  console.log("You don't have remote repo. Please execute","\x1b[33m"," $gitbook-setup set-remote-repo","\x1b[0m");        
+	}
     });
 
     if (set_remote) {
       if (!fs.existsSync('_book')) {
-        console.log("You don't have your book built. Please execute $gitbook-setup build")
+        console.log("You don't have your book built. Please execute","\x1b[33m"," $gitbook-setup build","\x1b[0m");
       }
       else {
         console.log("Lets push to gh-pages");
